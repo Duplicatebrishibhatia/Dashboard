@@ -18,9 +18,10 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://your-vercel-frontend-domain.vercel.app'
+    : 'http://localhost:3000',
+  credentials: true
 }));
 app.use(express.json());
 app.use(morgan(NODE_ENV === 'development' ? 'dev' : 'combined'));

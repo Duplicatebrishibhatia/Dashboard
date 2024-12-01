@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: dashboard-backend
+    env: node
+    region: frankfurt
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && node dist/index.js
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://brishi11128:B4ZN3OREzvHHJuIc@cluster0.3x0wt.mongodb.net/mmern-estate?retryWrites=true&w=majority&appName=Cluster0
+      - key: FRONTEND_URL
+        sync: false
+
+  - type: web
+    name: dashboard-frontend
+    env: node
+    region: frankfurt
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: dashboard-backend
+          type: web
+          property: url
+
+databases:
+  - name: dashboard-db
+    plan: free
