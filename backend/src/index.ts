@@ -19,7 +19,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-vercel-domain.vercel.app']
+    ? ['https://your-frontend-url.vercel.app', 'http://localhost:3000']
     : 'http://localhost:3000',
   credentials: true
 }));
@@ -27,6 +27,9 @@ app.use(express.json());
 app.use(morgan(NODE_ENV === 'development' ? 'dev' : 'combined'));
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'Backend API is running' });
+});
 app.use('/api/items', itemRoutes);
 
 // Error handling
