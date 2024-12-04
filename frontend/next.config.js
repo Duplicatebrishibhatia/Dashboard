@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    appDir: false,
+  },
 };
 
 module.exports = nextConfig;

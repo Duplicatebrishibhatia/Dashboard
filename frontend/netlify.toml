@@ -1,7 +1,8 @@
 [build]
-  command = "npm install && npm run build"
+  command = "CI=false npm install && npm run build"
   publish = ".next"
 
 [build.environment]
   NEXT_PUBLIC_API_URL = "https://dashboard-gmvy.onrender.com"
   NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
