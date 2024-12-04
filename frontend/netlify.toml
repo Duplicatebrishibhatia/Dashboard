@@ -1,6 +1,6 @@
 [build]
   command = "CI=false npm install && npx tailwindcss init -p && npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NEXT_PUBLIC_API_URL = "https://dashboard-gmvy.onrender.com"
