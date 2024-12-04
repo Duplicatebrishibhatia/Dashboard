@@ -19,7 +19,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-vercel-domain.vercel.app']
+    ? ['https://your-netlify-url.netlify.app']
     : 'http://localhost:3000',
   credentials: true
 }));
