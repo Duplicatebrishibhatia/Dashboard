@@ -19,9 +19,10 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-netlify-url.netlify.app']
+    ? ['https://dashbdoard.netlify.app']
     : 'http://localhost:3000',
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 app.use(express.json());
 app.use(morgan(NODE_ENV === 'development' ? 'dev' : 'combined'));
