@@ -84,7 +84,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 Your Name
-- GitHub: [@brishibhatia]([https://github.com/brishibhatia])
+- GitHub:  [Rishi Bhatia](https://github.com/brishibhatia)
 - LinkedIn: [Rishi Bhatia](https://www.linkedin.com/in/rishi-bhatia-991a66195/)
 
 ## 🤝 Contributing
